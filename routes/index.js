@@ -2,16 +2,30 @@ const express = require('express');
 const avaliacaoController = require('../controllers/controllerAvaliacao');
 const adminController = require('../controllers/controllerAdmin');
 const cidadeController = require('../controllers/controllerCidade');
-
+const ufController = require('../controllers/controllerUf');
 
 
 //Rotas
 const router = express.Router();
-router.get('/', avaliacaoController.index);
-router.get('/cidade', cidadeController.index);
-router.get('/admin', adminController.index);
 
+
+/*****UF******/
+
+router.get('/uf', ufController.index);
+
+
+/*****CIDADE******/
+
+router.get('/cidade', cidadeController.index);
 router.post('/cidade/add', cidadeController.add);
 
+/*****AVALIACAO******/
+
+router.get('/', avaliacaoController.index);
+
+
+
+/*****ADMIN******/
+router.get('/admin', adminController.index);
 
 module.exports = router;

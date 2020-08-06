@@ -1,17 +1,20 @@
 const mongoose = require('mongoose');
 const Cidade = mongoose.model('Cidade');
 
-exports.index = (req, res)=>{
-    res.send('Cidade');
+exports.index = async (req, res)=>{
+
+
+    try {
+        const data = await Cidade.find({});
+        console.log(data);
+        res.send(data);
+      } catch (error) {
+        res.status(500).send(error);
+      }
     };
 
     exports.add = async (req, res) =>{
 
-        //const { descricao_cidade, uf_id} = req.body;
-        
-        /*const cidade = new Cidade({
-
-        });*/
         const cidade = new Cidade(req.body);
 
         const c = await cidade.save();

@@ -12,8 +12,10 @@ mongoose.connection.on('error', (error) =>{
     console.error("ERROR "+ error.message);
 });
 
-//Carfregar os MOdels:
+//Carregar os Models:
 require('./models/Cidade');
+require('./models/Uf');
+
 const app = require('./app');
 
 app.set('port', process.env.PORT || 3003);
