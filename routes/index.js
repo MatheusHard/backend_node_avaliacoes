@@ -11,12 +11,12 @@ const router = express.Router();
 
 /*****UF******/
 
-router.get('/uf', ufController.index);
+router.post('/uf', ufController.index);
 
 
 /*****CIDADE******/
 
-router.get('/cidade', cidadeController.index);
+router.post('/cidade', cidadeController.index);
 router.post('/cidade/add', cidadeController.add);
 
 /*****AVALIACAO******/
@@ -24,8 +24,10 @@ router.post('/cidade/add', cidadeController.add);
 router.get('/', avaliacaoController.index);
 
 
-
 /*****ADMIN******/
+
 router.get('/admin', adminController.index);
+
+
 
 module.exports = router;
