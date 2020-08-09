@@ -2,7 +2,7 @@
   "name": "backends",
   "version": "1.0.0",
   "scripts": {
-    "start": "nodemon ./server.js"
+    "start": "nodemon -r dotenv/config ./server.js"
   },
   "dependencies": {
     "dotenv": "^8.2.0",
