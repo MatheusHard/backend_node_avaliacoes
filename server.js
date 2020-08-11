@@ -15,6 +15,7 @@ mongoose.connection.on('error', (error) =>{
 //Carregar os Models:
 require('./models/Cidade');
 require('./models/Uf');
+require('./models/Setor');
 
 const app = require('./app');
 

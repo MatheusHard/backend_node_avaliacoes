@@ -3,7 +3,7 @@ const avaliacaoController = require('../controllers/controllerAvaliacao');
 const adminController = require('../controllers/controllerAdmin');
 const cidadeController = require('../controllers/controllerCidade');
 const ufController = require('../controllers/controllerUf');
-
+const setorController = require('../controllers/setorController');
 
 //Rotas
 const router = express.Router();
@@ -19,9 +19,11 @@ router.post('/uf', ufController.index);
 router.post('/cidade', cidadeController.index);
 router.post('/cidade/add', cidadeController.add);
 
-/*****AVALIACAO******/
+/*****SETOR******/
 
-router.get('/', avaliacaoController.index);
+router.post('/setor', setorController.index);
+
+//router.get('/', avaliacaoController.index);
 
 
 /*****ADMIN******/
