@@ -2,9 +2,10 @@ const mongoose = require('mongoose');
 
 require('dotenv').config({path:'.env'});
 
-//mongoose.connect(process.env.DATABASE);
-mongoose.connect(process.env.DATABASE, { useUnifiedTopology: true, useNewUrlParser: true });
+try{
 
+
+mongoose.connect(process.env.DATABASE, { useUnifiedTopology: true, useNewUrlParser: true });
 
 mongoose.Promise = global.Promise;
 
@@ -12,10 +13,15 @@ mongoose.connection.on('error', (error) =>{
     console.error("ERROR "+ error.message);
 });
 
+}catch(error){
+    console.log("Erro ao conectar"+error);
+  }
+
 //Carregar os Models:
 require('./models/Cidade');
 require('./models/Uf');
-require('./models/Setor');
+require('./models/Funcionario');
+require('./models/Avaliacao');
 
 const app = require('./app');
 
