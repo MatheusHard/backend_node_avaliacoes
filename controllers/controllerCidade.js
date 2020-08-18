@@ -5,7 +5,7 @@ exports.index = async (req, res)=>{
 
 
     try {
-        const data = await Cidade.find({});
+        const data = await Cidade.find({}, {_id: 0});
         console.log(data);
         res.send(data);
       } catch (error) {

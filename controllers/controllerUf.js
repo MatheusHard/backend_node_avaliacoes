@@ -5,7 +5,7 @@ exports.index = async (req, res)=>{
 
 
     try {
-        const data = await Uf.find({});
+        const data = await Uf.find({}, {_id: 0});
         
         res.send(data);
       } catch (error) {
