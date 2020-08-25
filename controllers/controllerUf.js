@@ -2,10 +2,10 @@ const mongoose = require('mongoose');
 const Uf = mongoose.model('Uf');
 
 exports.index = async (req, res)=>{
-
-
+  
+const { descricao } = req.body;
     try {
-        const data = await Uf.find({}, {_id: 0});
+        const data = await Uf.find({}, {_id: 0}).sort({descricao});
         
         res.send(data);
       } catch (error) {

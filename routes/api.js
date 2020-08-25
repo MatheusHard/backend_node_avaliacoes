@@ -17,6 +17,8 @@ apiRouter.post('/cidade', cidadeController.index);
 /*****AVALIACAO******/
 
 apiRouter.post('/avaliacao/add', avaliacaoController.add);
+apiRouter.post('/avaliacao', avaliacaoController.index);
+
 
 
 module.exports = apiRouter;
