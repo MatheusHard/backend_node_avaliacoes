@@ -13,6 +13,8 @@ apiRouter.post('/uf', ufController.index);
 /*****CIDADE******/
 
 apiRouter.post('/cidade', cidadeController.index);
+apiRouter.post('/cidade/add', cidadeController.add);
+
 
 /*****AVALIACAO******/
 
