@@ -49,10 +49,10 @@ const avaliacaoSchema = new mongoose.Schema({
   radioRegular_10: { type: Number, required: true,  default: 0 },
   radioRuim_10: { type: Number, required: true,  default: 0 },
 
-  /*descricao: { type: String},
+  descricao: { type: String},
 
   cpf_profissional: { type: String, required: "Cpf é obrigatório!!!",  maxlength: 11 },
-  descricao_profissional: { type: String, required: "Nome do Profissional é obrigatório!!!" },
+/*  descricao_profissional: { type: String, required: "Nome do Profissional é obrigatório!!!" },
   tipo_profissional: { type: Number, required: true, },
   descricao_tipo_profissional: { type: String, required: "Tipo do Profissional é obrigatório!!!" },
 
