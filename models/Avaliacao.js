@@ -56,7 +56,7 @@ const avaliacaoSchema = new mongoose.Schema({
   tipo_profissional: { type: Number, required: true, default: 0},
   descricao_tipo_profissional: { type: String, required: "Tipo do Profissional é obrigatório!!!" },
 
-  datahora: { type: Date, required: "Data é obrigatória!!!" },
+  //datahora: { type: Date, required: "Data é obrigatória!!!" },
   cidade_id: { type: Number, required: "Campo Cidade_id é obrigatório!!!" },
   descricao_cidade: { type: String, required: "Nome da Cidade é obrigatória!!!" },
   uf_id: { type: Number, required: "Uf_id é obrigatória!!!" },
