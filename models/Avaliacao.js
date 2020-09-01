@@ -53,7 +53,7 @@ const avaliacaoSchema = new mongoose.Schema({
 
   cpf_profissional: { type: String, required: "Cpf é obrigatório!!!",  maxlength: 11 },
  descricao_profissional: { type: String, required: "Nome do Profissional é obrigatório!!!" },
-  tipo_profissional: { type: Number, required: true, },
+  tipo_profissional: { type: Number, required: true, default: 0},
   descricao_tipo_profissional: { type: String, required: "Tipo do Profissional é obrigatório!!!" },
 /*
   //datahora: { type: Date, required: "Data é obrigatória!!!" },
