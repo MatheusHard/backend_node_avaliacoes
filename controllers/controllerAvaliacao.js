@@ -14,7 +14,7 @@ exports.index = async (req, res)=>{
     };
 
     exports.add = async (req, res) =>{
-      console.log(req.body);
+        console.log(req.body);
 
         const avaliacao = new Avaliacao(req.body);
         const a = await avaliacao.save();
