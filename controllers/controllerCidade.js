@@ -1,24 +1,44 @@
-const mongoose = require('mongoose');
-const Cidade = mongoose.model('Cidade');
+const mongoose = require("mongoose");
+const Cidade = mongoose.model("Cidade");
 
-exports.index = async (req, res)=>{
+exports.index = async (req, res) => {
+  try {
+    const data = await Cidade.find({}, { _id: 0 });
+    console.log(data);
+    res.send(data);
+  } catch (error) {
+    res.status(500).send(error);
+  }
+};
 
-
-    try {
-        const data = await Cidade.find({}, {_id: 0});
-        console.log(data);
-        res.send(data);
-      } catch (error) {
-        res.status(500).send(error);
+exports.indexFrontEnd = async (req, res) => {
+  try {
+    const data = await Cidade.aggregate([
+      {
+        $lookup:
+         {
+          from: "uf",
+          localField: "uf_id_",
+          foreignField: "_id",
+          as: "cidade",
+        },
+      },
+      {
+        $unwind:'$cidade'
       }
-    };
 
-    exports.add = async (req, res) =>{
+    ]);
+    console.log(data);
+    res.send(data);
+  } catch (error) {
+    res.status(500).send(error);
+  }
+};
 
-        const cidade = new Cidade(req.body);
+exports.add = async (req, res) => {
+  const cidade = new Cidade(req.body);
 
-        const c = await cidade.save();
+  const c = await cidade.save();
 
-
-        res.json(c);
-        };
+  res.json(c);
+};
