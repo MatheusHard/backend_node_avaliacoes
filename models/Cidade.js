@@ -11,6 +11,11 @@ const cidadeSchema = new mongoose.Schema({
     uf_id: {
         type: Number,
         required: 'Uf é campo obrigatório'
+    }, 
+    uf_id_: {
+        type: mongoose.Types.ObjectId,
+        trim: true,
+        required: 'Uf é campo obrigatório'
     }
 
 });

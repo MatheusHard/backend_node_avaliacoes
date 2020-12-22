@@ -20,11 +20,11 @@ exports.indexFrontEnd = async (req, res) => {
           from: "uf",
           localField: "uf_id_",
           foreignField: "_id",
-          as: "cidade",
+          as: "uf",
         },
       },
       {
-        $unwind:'$cidade'
+        $unwind:'$uf'
       }
 
     ]);
