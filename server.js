@@ -5,7 +5,9 @@ require('dotenv').config({path:'.env'});
 try{
 
 
-mongoose.connect(process.env.DATABASE, { useUnifiedTopology: true, useNewUrlParser: true });
+//mongoose.connect(process.env.DATABASE, { useUnifiedTopology: true, useNewUrlParser: true });
+mongoose.connect("mongodb+srv://root:1q2w3e4r@cluster0-tdhq5.mongodb.net/avaliacoes?retryWrites=true&w=majority", { useUnifiedTopology: true, useNewUrlParser: true });
+console.log("DATABASE"+process.env.DATABASE);
 
 mongoose.Promise = global.Promise;
 
