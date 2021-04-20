@@ -15,6 +15,7 @@ exports.indexFrontEnd = async (req, res) => {
   try {
     const data = await Cidade.aggregate([
       {
+       
         $lookup:
          {
           from: "uf",
@@ -24,8 +25,16 @@ exports.indexFrontEnd = async (req, res) => {
         },
       },
       {
-        $unwind:'$uf'
-      }
+        $unwind:'$uf',
+
+       
+      },
+      
+      { $sort: {
+        'descricao_cidade': 1, 
+        
+    } }
+      
 
     ]);
     console.log(data);
