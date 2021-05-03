@@ -4,7 +4,12 @@ mongoose.Promise = global.Promise;
 const ufSchema = new mongoose.Schema({
 
 
-descricao_uf: {
+    _id: {
+        type: mongoose.Types.ObjectId,
+        trim: true,
+        required: 'ID é campo obrigatório'
+    },    
+    descricao_uf: {
         type: String,
         trim: true,
         required: 'Descrição Uf é um campo obrigatório'
